@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="740a933c-3882-4bf7-9445-7d35bf1af2ba">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     data_p.`NIK` AS data_p_NIK,
+     data_p.`nama` AS data_p_nama,
+     data_p.`gender` AS data_p_gender,
+     data_p.`noHp` AS data_p_noHp,
+     data_p.`alamat` AS data_p_alamat,
+     data_p.`treatment` AS data_p_treatment,
+     data_p.`jumlah` AS data_p_jumlah,
+     data_p.`tgl_masuk` AS data_p_tgl_masuk,
+     data_p.`tgl_ambil` AS data_p_tgl_ambil
+FROM
+     `data_p` data_p]]>
+	</queryString>
+	<field name="data_p_nama" class="java.lang.String"/>
+	<field name="data_p_treatment" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<staticText>
+				<reportElement x="86" y="2" width="100" height="20" uuid="2a16fbed-6f26-473d-90d4-c7f66b9cf5a5"/>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="314" y="2" width="100" height="20" uuid="b2b7109d-9ca7-4825-8c22-336c3ffc710a"/>
+				<text><![CDATA[TREATMENT]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="86" y="0" width="100" height="20" uuid="a762d9f4-4573-48cf-9ea2-96b868309102"/>
+				<textFieldExpression><![CDATA[$F{data_p_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="314" y="0" width="100" height="20" uuid="56ee870d-cc0a-4241-be9a-4ac7d9f9b581"/>
+				<textFieldExpression><![CDATA[$F{data_p_treatment}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
